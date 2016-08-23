@@ -1,9 +1,16 @@
 # Tiva Project
 
 Boilerplate code to compile, run, and debug an embedded program running on the
-EK-TM4C123-GXL chip (a.k.a. the Tiva C Series Launchpad). This is
-platform-independent and makes use of the free libraries supplied by TI as well
-as these open-sourced tools:
+EK-TM4C123-GXL chip (a.k.a. the Tiva C Series Launchpad). This boilerplate contains:
+
+- A `Makefile` to compile (`make all`), flash (`make flash`), or debug your project
+  (`make debug`)
+- A YouCompleteMe config file for Vim users wanting to have intelligent autocompletion
+  and other excellent IDE-like features
+- An example `blinky` project to show how the boilerplate fits together
+
+This is platform-independent and makes use of the free libraries supplied by TI as
+well as these open-sourced tools:
 
 - [lm4tools][lm4tools-link] for flashing and creating a GDB bridge
 
