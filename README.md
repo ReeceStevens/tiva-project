@@ -4,7 +4,7 @@ Boilerplate code to compile, run, and debug an embedded program running on the
 EK-TM4C123-GXL chip (a.k.a. the Tiva C Series Launchpad). This boilerplate contains:
 
 - A `Makefile` to compile (`make all`), flash (`make flash`), or debug your project
-  (`make debug`)
+  (`make debug`) using GDB
 - A YouCompleteMe config file for Vim users wanting to have intelligent autocompletion
   and other excellent IDE-like features
 - An example `blinky` project to show how the boilerplate fits together
@@ -12,7 +12,11 @@ EK-TM4C123-GXL chip (a.k.a. the Tiva C Series Launchpad). This boilerplate conta
 This is platform-independent and makes use of the free libraries supplied by TI as
 well as these open-sourced tools:
 
-- [lm4tools][lm4tools-link] for flashing and creating a GDB bridge
+- [lm4tools][lm4tools-link] for flashing
+
+- [OpenOCD][openocd-link] for creating a GDB bridge (recommend you install this via
+  your package manager, the `Makefile` assumes the executable and board configs are
+  in your path, which your package manager will do by default)
 
 - [GDB][GDB] to provide us with all the useful debugging tools you'd normally find
   in an IDE. I'd recommend installing this via your package manager rather than
@@ -54,5 +58,6 @@ Then you should have no problem compiling the `lm4tools` tools. Watch those
 version numbers in case `libusb` updates later on down the road!
 
 [lm4tools-link]: https://github.com/utzig/lm4tools
+[openocd-link]: http://openocd.org/
 [GDB]: https://www.gnu.org/software/gdb
 [gnu-arm]: https://launchpad.net/gcc-arm-embedded/+download

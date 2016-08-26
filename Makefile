@@ -41,7 +41,7 @@ OBJCOPY = arm-none-eabi-objcopy
 GDB = arm-none-eabi-gdb
 
 LM4FLASH = ../tools/lm4tools/lm4flash/lm4flash
-LMICDIUSB = ../tools/lm4tools/lmicdiusb/lmicdi
+OPENOCD = openocd
 
 # Implicit Rule Definitions
 
@@ -65,7 +65,8 @@ flash: $(PROJ_NAME).bin
 	$(LM4FLASH) $<
 
 debug: $(PROJ_NAME).elf
-	$(LMICDIUSB) $<
+	$(OPENOCD) -f board/ek-tm4c123gxl.cfg &
+	$(GDB) $<
 
 OBJS = $(patsubst %.c, %.o, ${SRCS})
 
